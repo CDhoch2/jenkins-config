@@ -1,0 +1,221 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<hudson>
+  <disabledAdministrativeMonitors/>
+  <version>1.625.1</version>
+  <numExecutors>2</numExecutors>
+  <mode>NORMAL</mode>
+  <useSecurity>true</useSecurity>
+  <authorizationStrategy class="hudson.security.GlobalMatrixAuthorizationStrategy">
+    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.Create:Konrad</permission>
+    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.Create:Lena</permission>
+    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.Create:Marlen</permission>
+    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.Create:Ruslan</permission>
+    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.Delete:Konrad</permission>
+    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.Delete:Lena</permission>
+    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.Delete:Marlen</permission>
+    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.Delete:Ruslan</permission>
+    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.ManageDomains:Konrad</permission>
+    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.ManageDomains:Lena</permission>
+    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.ManageDomains:Marlen</permission>
+    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.ManageDomains:Ruslan</permission>
+    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.Update:Konrad</permission>
+    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.Update:Lena</permission>
+    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.Update:Marlen</permission>
+    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.Update:Ruslan</permission>
+    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.View:Konrad</permission>
+    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.View:Lena</permission>
+    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.View:Marlen</permission>
+    <permission>com.cloudbees.plugins.credentials.CredentialsProvider.View:Ruslan</permission>
+    <permission>hudson.model.Computer.Build:Konrad</permission>
+    <permission>hudson.model.Computer.Build:Lena</permission>
+    <permission>hudson.model.Computer.Build:Marlen</permission>
+    <permission>hudson.model.Computer.Build:Ruslan</permission>
+    <permission>hudson.model.Computer.Configure:Konrad</permission>
+    <permission>hudson.model.Computer.Configure:Lena</permission>
+    <permission>hudson.model.Computer.Configure:Marlen</permission>
+    <permission>hudson.model.Computer.Configure:Ruslan</permission>
+    <permission>hudson.model.Computer.Connect:Konrad</permission>
+    <permission>hudson.model.Computer.Connect:Lena</permission>
+    <permission>hudson.model.Computer.Connect:Marlen</permission>
+    <permission>hudson.model.Computer.Connect:Ruslan</permission>
+    <permission>hudson.model.Computer.Create:Konrad</permission>
+    <permission>hudson.model.Computer.Create:Lena</permission>
+    <permission>hudson.model.Computer.Create:Marlen</permission>
+    <permission>hudson.model.Computer.Create:Ruslan</permission>
+    <permission>hudson.model.Computer.Delete:Konrad</permission>
+    <permission>hudson.model.Computer.Delete:Lena</permission>
+    <permission>hudson.model.Computer.Delete:Marlen</permission>
+    <permission>hudson.model.Computer.Delete:Ruslan</permission>
+    <permission>hudson.model.Computer.Disconnect:Konrad</permission>
+    <permission>hudson.model.Computer.Disconnect:Lena</permission>
+    <permission>hudson.model.Computer.Disconnect:Marlen</permission>
+    <permission>hudson.model.Computer.Disconnect:Ruslan</permission>
+    <permission>hudson.model.Hudson.Administer:Konrad</permission>
+    <permission>hudson.model.Hudson.Administer:Lena</permission>
+    <permission>hudson.model.Hudson.Administer:Marlen</permission>
+    <permission>hudson.model.Hudson.Administer:Ruslan</permission>
+    <permission>hudson.model.Hudson.Administer:anonymous</permission>
+    <permission>hudson.model.Hudson.ConfigureUpdateCenter:Konrad</permission>
+    <permission>hudson.model.Hudson.ConfigureUpdateCenter:Lena</permission>
+    <permission>hudson.model.Hudson.ConfigureUpdateCenter:Marlen</permission>
+    <permission>hudson.model.Hudson.ConfigureUpdateCenter:Ruslan</permission>
+    <permission>hudson.model.Hudson.Read:Konrad</permission>
+    <permission>hudson.model.Hudson.Read:Lena</permission>
+    <permission>hudson.model.Hudson.Read:Marlen</permission>
+    <permission>hudson.model.Hudson.Read:Ruslan</permission>
+    <permission>hudson.model.Hudson.Read:anonymous</permission>
+    <permission>hudson.model.Hudson.RunScripts:Konrad</permission>
+    <permission>hudson.model.Hudson.RunScripts:Lena</permission>
+    <permission>hudson.model.Hudson.RunScripts:Marlen</permission>
+    <permission>hudson.model.Hudson.RunScripts:Ruslan</permission>
+    <permission>hudson.model.Hudson.UploadPlugins:Konrad</permission>
+    <permission>hudson.model.Hudson.UploadPlugins:Lena</permission>
+    <permission>hudson.model.Hudson.UploadPlugins:Marlen</permission>
+    <permission>hudson.model.Hudson.UploadPlugins:Ruslan</permission>
+    <permission>hudson.model.Item.Build:Konrad</permission>
+    <permission>hudson.model.Item.Build:Lena</permission>
+    <permission>hudson.model.Item.Build:Marlen</permission>
+    <permission>hudson.model.Item.Build:Ruslan</permission>
+    <permission>hudson.model.Item.Cancel:Konrad</permission>
+    <permission>hudson.model.Item.Cancel:Lena</permission>
+    <permission>hudson.model.Item.Cancel:Marlen</permission>
+    <permission>hudson.model.Item.Cancel:Ruslan</permission>
+    <permission>hudson.model.Item.Configure:Konrad</permission>
+    <permission>hudson.model.Item.Configure:Lena</permission>
+    <permission>hudson.model.Item.Configure:Marlen</permission>
+    <permission>hudson.model.Item.Configure:Ruslan</permission>
+    <permission>hudson.model.Item.Create:Konrad</permission>
+    <permission>hudson.model.Item.Create:Lena</permission>
+    <permission>hudson.model.Item.Create:Marlen</permission>
+    <permission>hudson.model.Item.Create:Ruslan</permission>
+    <permission>hudson.model.Item.Delete:Konrad</permission>
+    <permission>hudson.model.Item.Delete:Lena</permission>
+    <permission>hudson.model.Item.Delete:Marlen</permission>
+    <permission>hudson.model.Item.Delete:Ruslan</permission>
+    <permission>hudson.model.Item.Discover:Konrad</permission>
+    <permission>hudson.model.Item.Discover:Lena</permission>
+    <permission>hudson.model.Item.Discover:Marlen</permission>
+    <permission>hudson.model.Item.Discover:Ruslan</permission>
+    <permission>hudson.model.Item.Read:Konrad</permission>
+    <permission>hudson.model.Item.Read:Lena</permission>
+    <permission>hudson.model.Item.Read:Marlen</permission>
+    <permission>hudson.model.Item.Read:Ruslan</permission>
+    <permission>hudson.model.Item.Workspace:Konrad</permission>
+    <permission>hudson.model.Item.Workspace:Lena</permission>
+    <permission>hudson.model.Item.Workspace:Marlen</permission>
+    <permission>hudson.model.Item.Workspace:Ruslan</permission>
+    <permission>hudson.model.Run.Delete:Konrad</permission>
+    <permission>hudson.model.Run.Delete:Lena</permission>
+    <permission>hudson.model.Run.Delete:Marlen</permission>
+    <permission>hudson.model.Run.Delete:Ruslan</permission>
+    <permission>hudson.model.Run.Update:Konrad</permission>
+    <permission>hudson.model.Run.Update:Lena</permission>
+    <permission>hudson.model.Run.Update:Marlen</permission>
+    <permission>hudson.model.Run.Update:Ruslan</permission>
+    <permission>hudson.model.View.Configure:Konrad</permission>
+    <permission>hudson.model.View.Configure:Lena</permission>
+    <permission>hudson.model.View.Configure:Marlen</permission>
+    <permission>hudson.model.View.Configure:Ruslan</permission>
+    <permission>hudson.model.View.Create:Konrad</permission>
+    <permission>hudson.model.View.Create:Lena</permission>
+    <permission>hudson.model.View.Create:Marlen</permission>
+    <permission>hudson.model.View.Create:Ruslan</permission>
+    <permission>hudson.model.View.Delete:Konrad</permission>
+    <permission>hudson.model.View.Delete:Lena</permission>
+    <permission>hudson.model.View.Delete:Marlen</permission>
+    <permission>hudson.model.View.Delete:Ruslan</permission>
+    <permission>hudson.model.View.Read:Konrad</permission>
+    <permission>hudson.model.View.Read:Lena</permission>
+    <permission>hudson.model.View.Read:Marlen</permission>
+    <permission>hudson.model.View.Read:Ruslan</permission>
+    <permission>hudson.model.View.Read:anonymous</permission>
+    <permission>hudson.scm.SCM.Tag:Konrad</permission>
+    <permission>hudson.scm.SCM.Tag:Lena</permission>
+    <permission>hudson.scm.SCM.Tag:Marlen</permission>
+    <permission>hudson.scm.SCM.Tag:Ruslan</permission>
+  </authorizationStrategy>
+  <securityRealm class="hudson.security.HudsonPrivateSecurityRealm">
+    <disableSignup>true</disableSignup>
+    <enableCaptcha>false</enableCaptcha>
+  </securityRealm>
+  <disableRememberMe>false</disableRememberMe>
+  <projectNamingStrategy class="jenkins.model.ProjectNamingStrategy$DefaultProjectNamingStrategy"/>
+  <workspaceDir>${ITEM_ROOTDIR}/workspace</workspaceDir>
+  <buildsDir>${ITEM_ROOTDIR}/builds</buildsDir>
+  <markupFormatter class="hudson.markup.RawHtmlMarkupFormatter" plugin="antisamy-markup-formatter@1.3">
+    <disableSyntaxHighlighting>false</disableSyntaxHighlighting>
+  </markupFormatter>
+  <jdks>
+    <jdk>
+      <name>Java 7</name>
+      <home>/usr/lib/jvm/java</home>
+      <properties/>
+    </jdk>
+  </jdks>
+  <viewsTabBar class="hudson.views.DefaultViewsTabBar"/>
+  <myViewsTabBar class="hudson.views.DefaultMyViewsTabBar"/>
+  <clouds/>
+  <quietPeriod>5</quietPeriod>
+  <scmCheckoutRetryCount>0</scmCheckoutRetryCount>
+  <views>
+    <hudson.model.AllView>
+      <owner class="hudson" reference="../../.."/>
+      <name>All</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+    </hudson.model.AllView>
+    <au.com.centrumsystems.hudson.plugin.buildpipeline.BuildPipelineView plugin="build-pipeline-plugin@1.4.8">
+      <owner class="hudson" reference="../../.."/>
+      <name>Pipeline Movies</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <gridBuilder class="au.com.centrumsystems.hudson.plugin.buildpipeline.DownstreamProjectGridBuilder">
+        <firstJob>movie-database-movies</firstJob>
+        <firstJobLink>job/movie-database-movies/</firstJobLink>
+      </gridBuilder>
+      <noOfDisplayedBuilds>3</noOfDisplayedBuilds>
+      <buildViewTitle></buildViewTitle>
+      <consoleOutputLinkStyle>Lightbox</consoleOutputLinkStyle>
+      <cssUrl></cssUrl>
+      <triggerOnlyLatestJob>false</triggerOnlyLatestJob>
+      <alwaysAllowManualTrigger>false</alwaysAllowManualTrigger>
+      <showPipelineParameters>false</showPipelineParameters>
+      <showPipelineParametersInHeaders>false</showPipelineParametersInHeaders>
+      <startsWithParameters>false</startsWithParameters>
+      <refreshFrequency>3</refreshFrequency>
+      <showPipelineDefinitionHeader>false</showPipelineDefinitionHeader>
+    </au.com.centrumsystems.hudson.plugin.buildpipeline.BuildPipelineView>
+    <au.com.centrumsystems.hudson.plugin.buildpipeline.BuildPipelineView plugin="build-pipeline-plugin@1.4.8">
+      <owner class="hudson" reference="../../.."/>
+      <name>Pipeline Actors</name>
+      <filterExecutors>false</filterExecutors>
+      <filterQueue>false</filterQueue>
+      <properties class="hudson.model.View$PropertyList"/>
+      <gridBuilder class="au.com.centrumsystems.hudson.plugin.buildpipeline.DownstreamProjectGridBuilder">
+        <firstJob>movie-database-actors</firstJob>
+        <firstJobLink>job/movie-database-actors/</firstJobLink>
+      </gridBuilder>
+      <noOfDisplayedBuilds>3</noOfDisplayedBuilds>
+      <buildViewTitle></buildViewTitle>
+      <consoleOutputLinkStyle>Lightbox</consoleOutputLinkStyle>
+      <cssUrl></cssUrl>
+      <triggerOnlyLatestJob>false</triggerOnlyLatestJob>
+      <alwaysAllowManualTrigger>false</alwaysAllowManualTrigger>
+      <showPipelineParameters>false</showPipelineParameters>
+      <showPipelineParametersInHeaders>false</showPipelineParametersInHeaders>
+      <startsWithParameters>false</startsWithParameters>
+      <refreshFrequency>3</refreshFrequency>
+      <showPipelineDefinitionHeader>false</showPipelineDefinitionHeader>
+    </au.com.centrumsystems.hudson.plugin.buildpipeline.BuildPipelineView>
+  </views>
+  <primaryView>All</primaryView>
+  <slaveAgentPort>0</slaveAgentPort>
+  <label></label>
+  <crumbIssuer class="hudson.security.csrf.DefaultCrumbIssuer">
+    <excludeClientIPFromCrumb>false</excludeClientIPFromCrumb>
+  </crumbIssuer>
+  <nodeProperties/>
+  <globalNodeProperties/>
+</hudson>
