@@ -218,5 +218,9 @@
     <excludeClientIPFromCrumb>false</excludeClientIPFromCrumb>
   </crumbIssuer>
   <nodeProperties/>
-  <globalNodeProperties/>
+  <globalNodeProperties>
+    <org.jenkinsci.plugins.envinject.EnvInjectNodeProperty plugin="envinject@1.92.1">
+      <unsetSystemVariables>false</unsetSystemVariables>
+    </org.jenkinsci.plugins.envinject.EnvInjectNodeProperty>
+  </globalNodeProperties>
 </hudson>

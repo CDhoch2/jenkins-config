@@ -32,7 +32,9 @@
                   <noDefaultExcludes>false</noDefaultExcludes>
                   <makeEmptyDirs>false</makeEmptyDirs>
                   <patternSeparator>[, ]+</patternSeparator>
-                  <execCommand>echo &quot;Docker stoppen&quot;;
+                  <execCommand>#export ACTORS_VERSION=88a46b4326d45a4956c8ae31d88347b6bf89ee9d
+#echo $ACTORS_VERSION
+echo &quot;Docker stoppen&quot;;
 sudo /home/ec2-user/docker-latest stop $(sudo /home/ec2-user/docker-latest ps -a -q);
 echo &quot;Container entfernen&quot;;
 sudo /home/ec2-user/docker-latest rm $(sudo /home/ec2-user/docker-latest ps -a -q);
