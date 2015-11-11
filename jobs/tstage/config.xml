@@ -32,18 +32,18 @@
                   <noDefaultExcludes>false</noDefaultExcludes>
                   <makeEmptyDirs>false</makeEmptyDirs>
                   <patternSeparator>[, ]+</patternSeparator>
-                  <execCommand>#echo &quot;Docker stoppen&quot;;
-#sudo docker stop $(sudo docker ps -a -q);
-#echo &quot;Container entfernen&quot;;
-#sudo docker rm $(sudo docker ps -a -q);
-#echo &quot;MaWi-CD update&quot;
-#cd MaWi-CD;
-#git stash;
-#git pull;
-#echo &quot;Docker compose up&quot;;
-#cd Jenkins;
-#cd Compose\ ohne\ Build/;
-#docker-compose up -d;</execCommand>
+                  <execCommand>echo &quot;Docker stoppen&quot;;
+sudo /home/ec2-user/docker-latest stop $(sudo /home/ec2-user/docker-latest ps -a -q);
+echo &quot;Container entfernen&quot;;
+sudo /home/ec2-user/docker-latest rm $(sudo /home/ec2-user/docker-latest ps -a -q);
+echo &quot;MaWi-CD update&quot;
+cd MaWi-CD;
+git stash;
+git pull;
+echo &quot;Docker compose up&quot;;
+cd Jenkins;
+cd Compose\ ohne\ Build/;
+docker-compose up -d;</execCommand>
                   <execTimeout>120000</execTimeout>
                   <usePty>true</usePty>
                 </jenkins.plugins.publish__over__ssh.BapSshTransfer>

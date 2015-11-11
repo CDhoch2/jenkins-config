@@ -100,6 +100,7 @@
     <permission>hudson.model.Item.Read:Lena</permission>
     <permission>hudson.model.Item.Read:Marlen</permission>
     <permission>hudson.model.Item.Read:Ruslan</permission>
+    <permission>hudson.model.Item.Read:anonymous</permission>
     <permission>hudson.model.Item.Workspace:Konrad</permission>
     <permission>hudson.model.Item.Workspace:Lena</permission>
     <permission>hudson.model.Item.Workspace:Marlen</permission>
