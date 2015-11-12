@@ -32,8 +32,20 @@
                   <noDefaultExcludes>false</noDefaultExcludes>
                   <makeEmptyDirs>false</makeEmptyDirs>
                   <patternSeparator>[, ]+</patternSeparator>
-                  <execCommand>#export ACTORS_VERSION=88a46b4326d45a4956c8ae31d88347b6bf89ee9d
-#echo $ACTORS_VERSION
+                  <execCommand>echo &quot;Image Versionen setzen&quot;
+export ACTORS_VERSION=$ACTORS_GIT_ID
+echo $ACTORS_VERSION
+export MOVIES_VERSION=$MOVIES_GIT_ID
+echo $MOVIES_VERSION
+export SHOP_REST_VERSION=$SHOP_REST_GIT_ID
+echo $SHOP_REST_VERSION
+export SHOP_APP_VERSION=$SHOP_APP_GIT_ID
+echo $SHOP_APP_VERSION
+export NAVIGATION_VERSION=$NAVIGATION_GIT_ID
+echo $NAVIGATION_VERSION
+export MONITORING_VERSION=$MONITORING_GIT_ID
+echo $MONITORING_VERSION
+
 echo &quot;Docker stoppen&quot;;
 sudo /home/ec2-user/docker-latest stop $(sudo /home/ec2-user/docker-latest ps -a -q);
 echo &quot;Container entfernen&quot;;
@@ -46,7 +58,7 @@ echo &quot;Docker compose up&quot;;
 cd Jenkins;
 cd Compose\ ohne\ Build/;
 docker-compose up -d;</execCommand>
-                  <execTimeout>120000</execTimeout>
+                  <execTimeout>600000</execTimeout>
                   <usePty>true</usePty>
                 </jenkins.plugins.publish__over__ssh.BapSshTransfer>
               </transfers>

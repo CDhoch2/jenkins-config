@@ -55,15 +55,25 @@
   <globalSettings class="jenkins.mvn.DefaultGlobalSettingsProvider"/>
   <reporters/>
   <publishers>
-    <hudson.tasks.BuildTrigger>
-      <childProjects>tstage</childProjects>
-      <threshold>
-        <name>SUCCESS</name>
-        <ordinal>0</ordinal>
-        <color>BLUE</color>
-        <completeBuild>true</completeBuild>
-      </threshold>
-    </hudson.tasks.BuildTrigger>
+    <hudson.plugins.parameterizedtrigger.BuildTrigger plugin="parameterized-trigger@2.29">
+      <configs>
+        <hudson.plugins.parameterizedtrigger.BuildTriggerConfig>
+          <configs>
+            <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
+              <properties>ACTORS_GIT_ID=$GIT_COMMIT
+MOVIES_GIT_ID=latest
+SHOP_REST_GIT_ID=latest
+SHOP_APP_GIT_ID=latest
+NAVIGATION_GIT_ID=latest
+MONITORING_GIT_ID=latest</properties>
+            </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
+          </configs>
+          <projects>tstage</projects>
+          <condition>SUCCESS</condition>
+          <triggerWithNoParameters>false</triggerWithNoParameters>
+        </hudson.plugins.parameterizedtrigger.BuildTriggerConfig>
+      </configs>
+    </hudson.plugins.parameterizedtrigger.BuildTrigger>
   </publishers>
   <buildWrappers>
     <org.jenkinsci.plugins.credentialsbinding.impl.SecretBuildWrapper plugin="credentials-binding@1.6">
@@ -83,66 +93,16 @@
   <prebuilders/>
   <postbuilders>
     <hudson.tasks.Shell>
-      <command>#cd Jenkins
-#sudo sh docker-build.sh
+      <command>cd Jenkins
+sudo sh docker-build.sh
 </command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
-      <command>#echo &quot;GIT SSH COMMIT&quot;
+      <command>cd Jenkins
+sudo sh dockerhub-push.sh
 #echo $GIT_COMMIT
-#cd Jenkins
-#sudo sh dockerhub-push.sh
-
-# DockerHub Login
-#do /home/ec2-user/docker-latest login -e ${dockerhub_mail} -u ${dockerhub_user} -p ${dockerhub_pwd}
-
-#Tag images
-#sudo /home/ec2-user/docker-latest tag -f moviedatabase_actors cdzwei/mvdb_actors:${GIT_COMMIT}
-#sudo /home/ec2-user/docker-latest tag -f moviedatabase_actors cdzwei/mvdb_actors:$(git log | head -1 | sed s/&apos;commit &apos;//)
-
-# Push to DockerHub
-#sudo /home/ec2-user/docker-latest push docker.io/cdzwei/mvdb_actors</command>
+</command>
     </hudson.tasks.Shell>
-    <jenkins.plugins.publish__over__ssh.BapSshBuilderPlugin plugin="publish-over-ssh@1.13">
-      <delegate>
-        <consolePrefix>SSH: </consolePrefix>
-        <delegate>
-          <publishers>
-            <jenkins.plugins.publish__over__ssh.BapSshPublisher>
-              <configName>SSH-TStage</configName>
-              <verbose>false</verbose>
-              <transfers>
-                <jenkins.plugins.publish__over__ssh.BapSshTransfer>
-                  <remoteDirectory></remoteDirectory>
-                  <sourceFiles></sourceFiles>
-                  <excludes></excludes>
-                  <removePrefix></removePrefix>
-                  <remoteDirectorySDF>false</remoteDirectorySDF>
-                  <flatten>false</flatten>
-                  <cleanRemote>false</cleanRemote>
-                  <noDefaultExcludes>false</noDefaultExcludes>
-                  <makeEmptyDirs>false</makeEmptyDirs>
-                  <patternSeparator>[, ]+</patternSeparator>
-                  <execCommand>export ACTORS_VERSION=&quot;$(sh actors.sh $GIT_COMMIT)&quot;
-echo $ACTORS_VERSION
-#sudo sh actors.sh $GIT_COMMIT
-#export ACTORS_VERSION=$GIT_COMMIT
-#echo $ACTORS_VERSION</execCommand>
-                  <execTimeout>120000</execTimeout>
-                  <usePty>true</usePty>
-                </jenkins.plugins.publish__over__ssh.BapSshTransfer>
-              </transfers>
-              <useWorkspaceInPromotion>false</useWorkspaceInPromotion>
-              <usePromotionTimestamp>false</usePromotionTimestamp>
-            </jenkins.plugins.publish__over__ssh.BapSshPublisher>
-          </publishers>
-          <continueOnError>false</continueOnError>
-          <failOnError>false</failOnError>
-          <alwaysPublishFromMaster>false</alwaysPublishFromMaster>
-          <hostConfigurationAccess class="jenkins.plugins.publish_over_ssh.BapSshPublisherPlugin" reference="../.."/>
-        </delegate>
-      </delegate>
-    </jenkins.plugins.publish__over__ssh.BapSshBuilderPlugin>
   </postbuilders>
   <runPostStepsIfResult>
     <name>SUCCESS</name>
