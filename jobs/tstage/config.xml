@@ -57,7 +57,9 @@ git pull;
 echo &quot;Docker compose up&quot;;
 cd Jenkins;
 cd Compose\ ohne\ Build/;
-docker-compose up -d;</execCommand>
+docker-compose up -d;
+echo &quot;Sleep 3 min&quot;
+sleep 180;</execCommand>
                   <execTimeout>600000</execTimeout>
                   <usePty>true</usePty>
                 </jenkins.plugins.publish__over__ssh.BapSshTransfer>
@@ -74,6 +76,16 @@ docker-compose up -d;</execCommand>
       </delegate>
     </jenkins.plugins.publish__over__ssh.BapSshBuilderPlugin>
   </builders>
-  <publishers/>
+  <publishers>
+    <hudson.tasks.BuildTrigger>
+      <childProjects>movie-database-test</childProjects>
+      <threshold>
+        <name>SUCCESS</name>
+        <ordinal>0</ordinal>
+        <color>BLUE</color>
+        <completeBuild>true</completeBuild>
+      </threshold>
+    </hudson.tasks.BuildTrigger>
+  </publishers>
   <buildWrappers/>
 </project>

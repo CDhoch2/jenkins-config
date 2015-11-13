@@ -98,9 +98,11 @@ sudo sh docker-build.sh
 </command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
-      <command>cd Jenkins
+      <command>echo &quot;Commit-ID&quot;
+echo $GIT_COMMIT
+cd Jenkins
 sudo sh dockerhub-push.sh
-#echo $GIT_COMMIT
+
 </command>
     </hudson.tasks.Shell>
   </postbuilders>
