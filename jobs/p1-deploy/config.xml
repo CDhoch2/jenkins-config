@@ -7,33 +7,8 @@
     <hudson.model.ParametersDefinitionProperty>
       <parameterDefinitions>
         <hudson.model.StringParameterDefinition>
-          <name>ACTORS_GIT_ID</name>
-          <description>Git Commit SHA vom movies-database-actors</description>
-          <defaultValue></defaultValue>
-        </hudson.model.StringParameterDefinition>
-        <hudson.model.StringParameterDefinition>
-          <name>MOVIES_GIT_ID</name>
-          <description>Git Commit SHA vom movies-database-movies</description>
-          <defaultValue></defaultValue>
-        </hudson.model.StringParameterDefinition>
-        <hudson.model.StringParameterDefinition>
-          <name>SHOP_REST_GIT_ID</name>
-          <description>Git Commit SHA vom movies-database-shop-rest</description>
-          <defaultValue></defaultValue>
-        </hudson.model.StringParameterDefinition>
-        <hudson.model.StringParameterDefinition>
-          <name>SHOP_APP_GIT_ID</name>
-          <description>Git Commit SHA vom movies-database-shop-app</description>
-          <defaultValue></defaultValue>
-        </hudson.model.StringParameterDefinition>
-        <hudson.model.StringParameterDefinition>
-          <name>NAVIGATION_GIT_ID</name>
-          <description>Git Commit SHA vom movies-database-naviation</description>
-          <defaultValue></defaultValue>
-        </hudson.model.StringParameterDefinition>
-        <hudson.model.StringParameterDefinition>
-          <name>MONITORING_GIT_ID</name>
-          <description>Git Commit SHA vom movies-database-monitoring</description>
+          <name>RELEASE_ID</name>
+          <description></description>
           <defaultValue></defaultValue>
         </hudson.model.StringParameterDefinition>
       </parameterDefinitions>

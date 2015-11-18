@@ -65,7 +65,8 @@ MOVIES_GIT_ID=latest
 SHOP_REST_GIT_ID=latest
 SHOP_APP_GIT_ID=latest
 NAVIGATION_GIT_ID=latest
-MONITORING_GIT_ID=latest</properties>
+MONITORING_GIT_ID=latest
+RELEASE_ID=4712</properties>
             </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
           </configs>
           <projects>tstage</projects>
@@ -98,8 +99,8 @@ sudo sh docker-build.sh
 </command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
-      <command>echo &quot;Commit-ID&quot;
-echo $GIT_COMMIT
+      <command>#echo &quot;Commit-ID&quot;
+#echo $GIT_COMMIT
 cd Jenkins
 sudo sh dockerhub-push.sh
 

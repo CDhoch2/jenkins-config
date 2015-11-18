@@ -45,6 +45,7 @@ export NAVIGATION_VERSION=$NAVIGATION_GIT_ID
 echo $NAVIGATION_VERSION
 export MONITORING_VERSION=$MONITORING_GIT_ID
 echo $MONITORING_VERSION
+echo $RELEASE_ID
 
 echo &quot;Docker stoppen&quot;;
 sudo /home/ec2-user/docker-latest stop $(sudo /home/ec2-user/docker-latest ps -a -q);
@@ -86,6 +87,12 @@ sleep 180;</execCommand>
         <completeBuild>true</completeBuild>
       </threshold>
     </hudson.tasks.BuildTrigger>
+    <au.com.centrumsystems.hudson.plugin.buildpipeline.trigger.BuildPipelineTrigger plugin="build-pipeline-plugin@1.4.8">
+      <configs>
+        <hudson.plugins.parameterizedtrigger.CurrentBuildParameters plugin="parameterized-trigger@2.29"/>
+      </configs>
+      <downstreamProjectNames>parameter-test</downstreamProjectNames>
+    </au.com.centrumsystems.hudson.plugin.buildpipeline.trigger.BuildPipelineTrigger>
   </publishers>
   <buildWrappers/>
 </project>
