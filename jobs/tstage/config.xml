@@ -45,7 +45,6 @@ export NAVIGATION_VERSION=$NAVIGATION_GIT_ID
 echo $NAVIGATION_VERSION
 export MONITORING_VERSION=$MONITORING_GIT_ID
 echo $MONITORING_VERSION
-echo $RELEASE_ID
 
 echo &quot;Docker stoppen&quot;;
 sudo /home/ec2-user/docker-latest stop $(sudo /home/ec2-user/docker-latest ps -a -q);
@@ -59,8 +58,8 @@ echo &quot;Docker compose up&quot;;
 cd Jenkins;
 cd Compose\ ohne\ Build/;
 docker-compose up -d;
-echo &quot;Sleep 3 min&quot;
-sleep 180;</execCommand>
+echo &quot;Sleep 2 min&quot;
+sleep 120;</execCommand>
                   <execTimeout>600000</execTimeout>
                   <usePty>true</usePty>
                 </jenkins.plugins.publish__over__ssh.BapSshTransfer>
@@ -78,21 +77,18 @@ sleep 180;</execCommand>
     </jenkins.plugins.publish__over__ssh.BapSshBuilderPlugin>
   </builders>
   <publishers>
-    <hudson.tasks.BuildTrigger>
-      <childProjects>movie-database-test</childProjects>
-      <threshold>
-        <name>SUCCESS</name>
-        <ordinal>0</ordinal>
-        <color>BLUE</color>
-        <completeBuild>true</completeBuild>
-      </threshold>
-    </hudson.tasks.BuildTrigger>
-    <au.com.centrumsystems.hudson.plugin.buildpipeline.trigger.BuildPipelineTrigger plugin="build-pipeline-plugin@1.4.8">
+    <hudson.plugins.parameterizedtrigger.BuildTrigger plugin="parameterized-trigger@2.29">
       <configs>
-        <hudson.plugins.parameterizedtrigger.CurrentBuildParameters plugin="parameterized-trigger@2.29"/>
+        <hudson.plugins.parameterizedtrigger.BuildTriggerConfig>
+          <configs>
+            <hudson.plugins.parameterizedtrigger.CurrentBuildParameters/>
+          </configs>
+          <projects>movie-database-test</projects>
+          <condition>SUCCESS</condition>
+          <triggerWithNoParameters>false</triggerWithNoParameters>
+        </hudson.plugins.parameterizedtrigger.BuildTriggerConfig>
       </configs>
-      <downstreamProjectNames>parameter-test</downstreamProjectNames>
-    </au.com.centrumsystems.hudson.plugin.buildpipeline.trigger.BuildPipelineTrigger>
+    </hudson.plugins.parameterizedtrigger.BuildTrigger>
   </publishers>
   <buildWrappers/>
 </project>
