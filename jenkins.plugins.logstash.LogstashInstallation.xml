@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jenkins.plugins.logstash.LogstashInstallation_-Descriptor plugin="logstash@1.1.1">
+  <installations class="jenkins.plugins.logstash.LogstashInstallation-array"/>
+  <type>SYSLOG</type>
+  <host>tcp://52.29.31.102</host>
+  <port>5000</port>
+  <username></username>
+  <password></password>
+  <key>jenkins</key>
+</jenkins.plugins.logstash.LogstashInstallation_-Descriptor>

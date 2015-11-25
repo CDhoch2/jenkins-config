@@ -3,7 +3,42 @@
   <actions/>
   <description></description>
   <keepDependencies>false</keepDependencies>
-  <properties/>
+  <properties>
+    <hudson.model.ParametersDefinitionProperty>
+      <parameterDefinitions>
+        <hudson.model.StringParameterDefinition>
+          <name>ACTORS_GIT_ID</name>
+          <description>GitHub Commit-ID</description>
+          <defaultValue></defaultValue>
+        </hudson.model.StringParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>MOVIES_GIT_ID</name>
+          <description>GitHub Commit-ID</description>
+          <defaultValue></defaultValue>
+        </hudson.model.StringParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>SHOP_REST_GIT_ID</name>
+          <description>GitHub Commit-ID</description>
+          <defaultValue></defaultValue>
+        </hudson.model.StringParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>SHOP_APP_GIT_ID</name>
+          <description>GitHub Commit-ID</description>
+          <defaultValue></defaultValue>
+        </hudson.model.StringParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>NAVIGATION_GIT_ID</name>
+          <description>GitHub Commit-ID</description>
+          <defaultValue></defaultValue>
+        </hudson.model.StringParameterDefinition>
+        <hudson.model.StringParameterDefinition>
+          <name>MONITORING_GIT_ID</name>
+          <description>GitHub Commit-ID</description>
+          <defaultValue></defaultValue>
+        </hudson.model.StringParameterDefinition>
+      </parameterDefinitions>
+    </hudson.model.ParametersDefinitionProperty>
+  </properties>
   <scm class="hudson.scm.NullSCM"/>
   <canRoam>true</canRoam>
   <disabled>false</disabled>
@@ -18,8 +53,8 @@
         <delegate>
           <publishers>
             <jenkins.plugins.publish__over__ssh.BapSshPublisher>
-              <configName>SSH-TStage</configName>
-              <verbose>true</verbose>
+              <configName>SSH-P2</configName>
+              <verbose>false</verbose>
               <transfers>
                 <jenkins.plugins.publish__over__ssh.BapSshTransfer>
                   <remoteDirectory></remoteDirectory>
@@ -57,11 +92,7 @@ git pull;
 echo &quot;Docker compose up&quot;;
 cd Jenkins;
 cd Compose\ ohne\ Build/;
-#TStage spezifisches docker-compose
-docker-compose -f docker-compose.yml -f docker-compose.t-stage.yml up -d
-#docker-compose up -d;
-echo &quot;Sleep 2 min&quot;
-sleep 120;</execCommand>
+docker-compose up -d;</execCommand>
                   <execTimeout>600000</execTimeout>
                   <usePty>true</usePty>
                 </jenkins.plugins.publish__over__ssh.BapSshTransfer>
@@ -78,19 +109,6 @@ sleep 120;</execCommand>
       </delegate>
     </jenkins.plugins.publish__over__ssh.BapSshBuilderPlugin>
   </builders>
-  <publishers>
-    <hudson.plugins.parameterizedtrigger.BuildTrigger plugin="parameterized-trigger@2.29">
-      <configs>
-        <hudson.plugins.parameterizedtrigger.BuildTriggerConfig>
-          <configs>
-            <hudson.plugins.parameterizedtrigger.CurrentBuildParameters/>
-          </configs>
-          <projects>movie-database-test</projects>
-          <condition>SUCCESS</condition>
-          <triggerWithNoParameters>false</triggerWithNoParameters>
-        </hudson.plugins.parameterizedtrigger.BuildTriggerConfig>
-      </configs>
-    </hudson.plugins.parameterizedtrigger.BuildTrigger>
-  </publishers>
+  <publishers/>
   <buildWrappers/>
 </project>

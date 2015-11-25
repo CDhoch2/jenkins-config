@@ -3,7 +3,7 @@
   <installations>
     <hudson.plugins.sonar.SonarRunnerInstallation>
       <name>SonarQube Runner</name>
-      <home>/home/ec2-user/Sonar/sonar-runner-2.4</home>
+      <home>/var/lib/jenkins/sonar/sonar-runner-2.4</home>
       <properties/>
     </hudson.plugins.sonar.SonarRunnerInstallation>
   </installations>

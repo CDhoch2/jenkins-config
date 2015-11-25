@@ -60,12 +60,12 @@
         <hudson.plugins.parameterizedtrigger.BuildTriggerConfig>
           <configs>
             <hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
-              <properties>ACTORS_GIT_ID=latest
+              <properties>ACTORS_GIT_ID=$GIT_ACTORS
 MOVIES_GIT_ID=$GIT_COMMIT
-SHOP_REST_GIT_ID=latest
-SHOP_APP_GIT_ID=latest
-NAVIGATION_GIT_ID=latest
-MONITORING_GIT_ID=latest</properties>
+SHOP_REST_GIT_ID=$GIT_SHOP_REST
+SHOP_APP_GIT_ID=$GIT_SHOP_APP
+NAVIGATION_GIT_ID=$GIT_NAVIGATION
+MONITORING_GIT_ID=$GIT_MONITORING</properties>
             </hudson.plugins.parameterizedtrigger.PredefinedBuildParameters>
           </configs>
           <projects>tstage</projects>
@@ -93,11 +93,39 @@ MONITORING_GIT_ID=latest</properties>
   <prebuilders/>
   <postbuilders>
     <hudson.tasks.Shell>
+      <command>cd /var/lib/jenkins/jobs/movie-database-actors/workspace/
+# Nur ein &quot;&gt;&quot; damit die Datei zunächst überschrieben wird
+echo &quot;GIT_ACTORS=$(git log | head -1 | sed s/&apos;commit &apos;//)&quot; &gt; $WORKSPACE/env.properties
+cd /var/lib/jenkins/jobs/movie-database-shop-app/workspace/
+sudo echo &quot;GIT_SHOP_APP=$(git log | head -1 | sed s/&apos;commit &apos;//)&quot; &gt;&gt; $WORKSPACE/env.properties
+cd /var/lib/jenkins/jobs/movie-database-shop-rest/workspace/
+sudo echo &quot;GIT_SHOP_REST=$(git log | head -1 | sed s/&apos;commit &apos;//)&quot; &gt;&gt; $WORKSPACE/env.properties
+cd /var/lib/jenkins/jobs/movie-database-monitoring/workspace/
+sudo echo &quot;GIT_MONITORING=$(git log | head -1 | sed s/&apos;commit &apos;//)&quot; &gt;&gt; $WORKSPACE/env.properties
+cd /var/lib/jenkins/jobs/movie-database-navigation/workspace/
+sudo echo &quot;GIT_NAVIGATION=$(git log | head -1 | sed s/&apos;commit &apos;//)&quot; &gt;&gt; $WORKSPACE/env.properties</command>
+    </hudson.tasks.Shell>
+    <EnvInjectBuilder plugin="envinject@1.92.1">
+      <info>
+        <propertiesFilePath>env.properties</propertiesFilePath>
+      </info>
+    </EnvInjectBuilder>
+    <hudson.tasks.Shell>
       <command>cd Jenkins
 sudo sh docker-build.sh</command>
     </hudson.tasks.Shell>
     <hudson.tasks.Shell>
-      <command>cd Jenkins
+      <command>echo &quot;GIT_ACTORS&quot;
+echo $GIT_ACTORS
+echo &quot;GIT_SHOP_APP&quot;
+echo $GIT_SHOP_APP
+echo &quot;GIT_SHOP_REST&quot;
+echo $GIT_SHOP_REST
+echo &quot;GIT_MONITORING&quot;
+echo $GIT_MONITORING
+echo &quot;GIT_NAVIGATION&quot;
+echo $GIT_NAVIGATION
+cd Jenkins
 sudo sh dockerhub-push.sh</command>
     </hudson.tasks.Shell>
   </postbuilders>
