@@ -28,11 +28,7 @@
   <disabled>false</disabled>
   <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
   <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
-  <triggers>
-    <com.cloudbees.jenkins.GitHubPushTrigger plugin="github@1.14.0">
-      <spec></spec>
-    </com.cloudbees.jenkins.GitHubPushTrigger>
-  </triggers>
+  <triggers/>
   <concurrentBuild>false</concurrentBuild>
   <rootModule>
     <groupId>de.codecentric</groupId>
@@ -86,10 +82,7 @@ sudo echo &quot;git_shop_app=$(git log | head -1 | sed s/&apos;commit &apos;//)&
       </info>
     </EnvInjectBuilder>
     <hudson.tasks.Shell>
-      <command>echo git_movies: $git_movies | nc 52.29.31.102 5000 
-echo &quot;git_shop_app&quot;
-echo $git_shop_app
-cd Jenkins
+      <command>cd Jenkins
 sudo sh docker-build.sh
 </command>
     </hudson.tasks.Shell>

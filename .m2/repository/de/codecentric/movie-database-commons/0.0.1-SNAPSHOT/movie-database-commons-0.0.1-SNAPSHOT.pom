@@ -4,12 +4,14 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
-		<groupId>de.codecentric</groupId>
-		<artifactId>movie-database</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.2.0.RELEASE</version>
 	</parent>
-
+	
+	<groupId>de.codecentric</groupId>
 	<artifactId>movie-database-commons</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>movie-database-commons</name>
@@ -47,5 +49,4 @@
 			<artifactId>spring-boot-autoconfigure</artifactId>
 		</dependency>
 	</dependencies>
-
 </project>

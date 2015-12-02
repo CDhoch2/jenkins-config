@@ -60,6 +60,16 @@ cd Compose\ ohne\ Build/;
 #TStage spezifisches docker-compose
 docker-compose -f docker-compose.yml -f docker-compose.t-stage.yml up -d
 #docker-compose up -d;
+
+confString=&quot;Konfiguration&quot;
+confString=&quot;$confString actors: $ACTORS_VERSION&quot;
+confString=&quot;$confString movies: $MOVIES_VERSION&quot;
+confString=&quot;$confString shop_rest: $SHOP_REST_VERSION&quot;
+confString=&quot;$confString shop_app: $SHOP_APP_VERSION&quot;
+confString=&quot;$confString monitoring: $MONITORING_VERSION&quot;
+echo $confString | nc 52.29.31.102 5000 
+
+
 echo &quot;Sleep 2 min&quot;
 sleep 120;</execCommand>
                   <execTimeout>600000</execTimeout>
