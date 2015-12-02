@@ -42,7 +42,7 @@
   <scm class="hudson.scm.NullSCM"/>
   <canRoam>true</canRoam>
   <disabled>false</disabled>
-  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenDownstreamBuilding>true</blockBuildWhenDownstreamBuilding>
   <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
   <triggers/>
   <concurrentBuild>false</concurrentBuild>
@@ -93,7 +93,10 @@ echo &quot;Docker compose up&quot;;
 cd Jenkins;
 cd Compose\ ohne\ Build/;
 #TStage spezifisches docker-compose
-docker-compose -f docker-compose.yml -f docker-compose.t-stage.yml up -d</execCommand>
+docker-compose -f docker-compose.yml -f docker-compose.t-stage.yml up -d
+
+echo &quot;Sleep 2 min&quot;
+sleep 120;</execCommand>
                   <execTimeout>600000</execTimeout>
                   <usePty>true</usePty>
                 </jenkins.plugins.publish__over__ssh.BapSshTransfer>
@@ -110,6 +113,19 @@ docker-compose -f docker-compose.yml -f docker-compose.t-stage.yml up -d</execCo
       </delegate>
     </jenkins.plugins.publish__over__ssh.BapSshBuilderPlugin>
   </builders>
-  <publishers/>
+  <publishers>
+    <hudson.plugins.parameterizedtrigger.BuildTrigger plugin="parameterized-trigger@2.29">
+      <configs>
+        <hudson.plugins.parameterizedtrigger.BuildTriggerConfig>
+          <configs>
+            <hudson.plugins.parameterizedtrigger.CurrentBuildParameters/>
+          </configs>
+          <projects>movie-database-test</projects>
+          <condition>SUCCESS</condition>
+          <triggerWithNoParameters>false</triggerWithNoParameters>
+        </hudson.plugins.parameterizedtrigger.BuildTriggerConfig>
+      </configs>
+    </hudson.plugins.parameterizedtrigger.BuildTrigger>
+  </publishers>
   <buildWrappers/>
 </project>
