@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata modelVersion="1.1.0">
+  <groupId>de.codecentric</groupId>
+  <artifactId>movie-database-navigation</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <versioning>
+    <snapshot>
+      <timestamp>20160119.194308</timestamp>
+      <buildNumber>3</buildNumber>
+    </snapshot>
+    <lastUpdated>20160119194308</lastUpdated>
+    <snapshotVersions>
+      <snapshotVersion>
+        <extension>jar</extension>
+        <value>0.0.1-20160119.194308-3</value>
+        <updated>20160119194308</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <extension>pom</extension>
+        <value>0.0.1-20160119.194308-3</value>
+        <updated>20160119194308</updated>
+      </snapshotVersion>
+    </snapshotVersions>
+  </versioning>
+</metadata>

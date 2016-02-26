@@ -1,4 +1,6 @@
 #NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
-#Tue Nov 03 12:20:37 UTC 2015
+#Wed Dec 02 11:51:06 UTC 2015
 sisu-guice-3.1.0-no_aop.jar>central=
+sisu-guice-3.1.0.pom>nexus=
+sisu-guice-3.1.0-no_aop.jar>nexus=
 sisu-guice-3.1.0.pom>central=

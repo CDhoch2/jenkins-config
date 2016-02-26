@@ -1,4 +1,6 @@
 #NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
-#Tue Nov 03 12:20:50 UTC 2015
+#Wed Dec 02 11:53:18 UTC 2015
 d3js-3.4.11.pom>central=
+d3js-3.4.11.pom>nexus=
+d3js-3.4.11.jar>nexus=
 d3js-3.4.11.jar>central=

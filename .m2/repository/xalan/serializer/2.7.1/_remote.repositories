@@ -1,4 +1,6 @@
 #NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
-#Thu Nov 12 20:25:40 UTC 2015
+#Wed Dec 02 12:54:18 UTC 2015
 serializer-2.7.1.pom>central=
+serializer-2.7.1.jar>nexus=
 serializer-2.7.1.jar>central=
+serializer-2.7.1.pom>nexus=

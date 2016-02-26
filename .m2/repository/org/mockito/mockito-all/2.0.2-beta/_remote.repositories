@@ -1,4 +1,6 @@
 #NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
-#Tue Nov 03 12:20:47 UTC 2015
+#Wed Dec 02 12:01:45 UTC 2015
+mockito-all-2.0.2-beta.jar>nexus=
 mockito-all-2.0.2-beta.jar>central=
 mockito-all-2.0.2-beta.pom>central=
+mockito-all-2.0.2-beta.pom>nexus=

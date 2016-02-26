@@ -1,4 +1,6 @@
 #NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
-#Tue Nov 03 12:20:50 UTC 2015
+#Wed Dec 02 11:53:18 UTC 2015
 jquery-1.11.0.pom>central=
+jquery-1.11.0.pom>nexus=
+jquery-1.11.0.jar>nexus=
 jquery-1.11.0.jar>central=
